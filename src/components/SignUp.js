@@ -1,34 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import './SignUp.css';
 
-function Signup() {
+export default function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
-    <div className="SignUpPage">
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR8ulcnx_OBbaLX9SeS_DNPi1ddEx8GqsWpg&usqp=CAU' alt=""/>
-      <form>
-        <h3>SignUp</h3>
-
-        <div className="Username">
-          <label>Username</label>
-          <input type="text" placeholder="recipe3" />
-        </div>
-
-        <div className="Email">
-          <label>Email address</label>
-          <input type="email" placeholder="jsx@gmail.com" />
-        </div>
-
-        <div className="Password">
-          <label>Enter Password</label>
-          <input type="password" placeholder="******" />
-        </div>
-
-        <Link to="/login">
-          <p>Login</p>
+    <div className="SignUp">
+         <Form onSubmit={handleSubmit}>
+      <Form.Group size="lg" controlId="username">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+           </Form.Group>
+        
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        Already registered?<Link to="/login">
+          <Button block size='lg'>Login</Button>
         </Link>
-        <button type="submit">SignUp</button>
-      </form>
+        
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          SignUp
+        </Button>
+      </Form>
     </div>
   );
 }
-export default Signup;

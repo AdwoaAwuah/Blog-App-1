@@ -1,0 +1,17 @@
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+  .Login {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRcBFvwWwx5kb2YQ3-hgYq_LuBMzL_mcm6Ww&usqp=CAU);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position:center ;
+     
+    }
