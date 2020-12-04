@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 
 import PostItem from './PostItem';
+import Form from './AddPosts';
 
 
 function Home () {
@@ -34,7 +35,10 @@ function Home () {
     
     return (
         <div>
-            <h1 className="mb-5">Homepage</h1>
+            <h1 className="mb-5">Maame's Blog</h1>
+            <div>
+                
+            </div>
             <div className="row">
                 <div className="col-8 mx-auto">
                     {

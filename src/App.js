@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Home from './components/Home';
+import Form from "./components/AddPosts";
 
 export default function App() {
   return (
@@ -15,6 +16,8 @@ export default function App() {
         <Route path="/signup" component ={SignUp}/>
         <Route path="/login" component ={Login}/>
         <Route path="/" exact={true} component={Home} />
+        <Route path="/Addpost" exact={true} component={Form} />
+
 
      </Switch>
      
